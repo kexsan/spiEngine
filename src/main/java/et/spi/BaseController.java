@@ -53,10 +53,8 @@ public class BaseController {
 
     @Cacheable("myCache")
     public String baseTestCache(String s) {
-        log.info("From input");
 
-        log.debug(cacheService.getCachedData(s));
-        return s != null ? s : "NULL";
+        return cacheService.getCachedData(s);
     }
 
 

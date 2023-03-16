@@ -12,7 +12,7 @@ public class CacheService {
 
     @Cacheable("myCache")
     public String getCachedData(String key) {
-        log.debug("sssssssssssssss");
+        log.info("getting data without cache");
         return expensiveMethodCall(key);
     }
 
