@@ -25,10 +25,10 @@ public class BaseController {
     }
 
     @GetMapping("/testSpi")
-    public ResponseEntity hello(@RequestParam(value = "name", defaultValue = "Spi tester") String name) {
+    public ResponseEntity testSpi(@RequestParam(value = "name", defaultValue = "Spi tester") String name) {
 
         try {
-            cc();
+            baseTestSpi();
         } catch (Exception e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
 
@@ -44,7 +44,7 @@ public class BaseController {
     public ResponseEntity testCache(@RequestParam(value = "name", defaultValue = "tester testCache") String name) {
 
         try {
-            return new ResponseEntity<>(dd(name), HttpStatus.OK);
+            return new ResponseEntity<>(baseTestCache(name), HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
 
@@ -52,7 +52,7 @@ public class BaseController {
     }
 
     @Cacheable("myCache")
-    public String dd(String s) {
+    public String baseTestCache(String s) {
         log.info("From input");
 
         log.debug(cacheService.getCachedData(s));
@@ -60,7 +60,7 @@ public class BaseController {
     }
 
 
-    private void cc() {
+    private void baseTestSpi() {
         log.info("I'm logger");
         System.out.println("CLASSPATH " + System.getenv("CLASSPATH"));
         extracted();
