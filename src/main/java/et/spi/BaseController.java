@@ -51,17 +51,12 @@ public class BaseController {
         }
     }
 
-    //@Cacheable(value = "cScripts", key = "#s")
     @Cacheable("myCache")
     public String dd(String s) {
         log.info("From input");
-        perform(s);
-        return s != null ? s : "NULL";
-    }
 
-    private void perform(String s) {
-        log.debug("Do something!");
         log.debug(cacheService.getCachedData(s));
+        return s != null ? s : "NULL";
     }
 
 
@@ -71,7 +66,6 @@ public class BaseController {
         extracted();
         ServiceLoader<ExchangeRateProvider> loader = ServiceLoader.load(ExchangeRateProvider.class);
         Iterator<ExchangeRateProvider> iterator = loader.iterator();
-        // loader.reload();
         if (iterator.hasNext()) {
             System.out.println("resolved classes: ");
             ExchangeRateProvider provider = iterator.next();
