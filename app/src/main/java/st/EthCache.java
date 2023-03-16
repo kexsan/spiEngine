@@ -1,5 +1,6 @@
 package st;
 
-public @interface EthCache {
+public @interface EthCache
+{
     String value();
 }
