@@ -1,0 +1,18 @@
+version: '3.9'
+services:
+  settings:
+    container_name: spiEngine1985
+    volumes:
+      - "./logs:/usr/src/app/log"
+      - "./ext-libs:/usr/src/app/ext-libs"
+    environment:
+      PROFILE: "local"
+      CONFIG_URI: "http://settings:8080"
+      TZ: "Europe/Moscow"
+      DOCKER_HOST: ${UID}
+      CLASSPATH: "lib/spiEngine-0.0.1-SNAPSHOT.jar"
+    ports:
+      - 8888:8080
+    image:  spiengine:v1000
+    extra_hosts:
+      - "host.docker.internal:host-gateway" 
