@@ -1,6 +1,6 @@
 version: '3.9'
 services:
-  settings:
+  web:
     container_name: spiEngine1985
     volumes:
       - "./logs:/usr/src/app/log"
