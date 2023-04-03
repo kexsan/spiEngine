@@ -1,1 +1,2 @@
 # docker-compose -f docker-compose.yml -p ccrm up
+# to run java -jar spiEngine-0.0.1-SNAPSHOT.jar  --spring.config.additional-location=file:///d:/myPrj/spiEngine/src/main/resources/application_local.yaml

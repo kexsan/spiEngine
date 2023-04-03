@@ -20,10 +20,11 @@ public class BaseController {
 
     private final CacheService cacheService;
     private final EnvComponent envComponent;
-
-    public BaseController(CacheService cacheService, EnvComponent envComponent) {
+    private final  TestProps testProps;
+    public BaseController(CacheService cacheService, EnvComponent envComponent, TestProps testProps) {
         this.cacheService = cacheService;
         this.envComponent = envComponent;
+        this.testProps = testProps;
     }
 
     @GetMapping("/testSpi")
