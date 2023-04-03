@@ -19,15 +19,18 @@ import java.util.ServiceLoader;
 public class BaseController {
 
     private final CacheService cacheService;
+    private final EnvComponent envComponent;
 
-    public BaseController(CacheService cacheService) {
+    public BaseController(CacheService cacheService, EnvComponent envComponent) {
         this.cacheService = cacheService;
+        this.envComponent = envComponent;
     }
 
     @GetMapping("/testSpi")
     public ResponseEntity testSpi(@RequestParam(value = "name", defaultValue = "Spi tester") String name) {
 
         try {
+            envComponent.retrieveApplicationName();
             baseTestSpi();
         } catch (Exception e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
