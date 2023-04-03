@@ -14,5 +14,8 @@ public class TestProps {
     @PostConstruct
     void run() {
         System.out.println(testProp);
+
+        String currentDirectory = System.getProperty("user.dir");
+        System.out.println("Current working directory is: " + currentDirectory);
     }
 }

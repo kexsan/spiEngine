@@ -16,7 +16,7 @@
       <option name="taskNames">
         <list>
           <option value="bootRun" />
-          <option value="--args='--spring.config.additional-location=file:///$PROJECT_DIR$/src/main/resources/application_local.yaml'" />
+          <option value="--args='--spring.config.additional-location=./src/main/resources/application_local.yaml'" />
         </list>
       </option>
       <option name="vmOptions" value="-cp $Classpath$:$PROJECT_DIR$/../eth-spi/ext-libs/eth-spi-app-1.0-SNAPSHOT.jar" />
