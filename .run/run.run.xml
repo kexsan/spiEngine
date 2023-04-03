@@ -1,0 +1,29 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="run" type="GradleRunConfiguration" factoryName="Gradle">
+    <ExternalSystemSettings>
+      <option name="env">
+        <map>
+          <entry key="LOADER_PATH" value="$PROJECT_DIR$/../eth-spi/ext-libs/" />
+        </map>
+      </option>
+      <option name="executionName" />
+      <option name="externalProjectPath" value="$PROJECT_DIR$" />
+      <option name="externalSystemIdString" value="GRADLE" />
+      <option name="scriptParameters" value="" />
+      <option name="taskDescriptions">
+        <list />
+      </option>
+      <option name="taskNames">
+        <list>
+          <option value="bootRun" />
+          <option value="--args='--spring.config.additional-location=file:///$PROJECT_DIR$/src/main/resources/application_local.yaml'" />
+        </list>
+      </option>
+      <option name="vmOptions" value="-cp $Classpath$:$PROJECT_DIR$/../eth-spi/ext-libs/eth-spi-app-1.0-SNAPSHOT.jar" />
+    </ExternalSystemSettings>
+    <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+    <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+    <DebugAllEnabled>false</DebugAllEnabled>
+    <method v="2" />
+  </configuration>
+</component>
