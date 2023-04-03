@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: spi-application-tishko
+
+  profiles:
+    active: development
+
+---
+
+spring:
+  profiles: development
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/mydatabase
+    username: root
+    password: password123
+
+  logging:
+    level:
+      org.springframework.web: DEBUG
+
+---
+
+spring:
+  profiles: production
+
+  datasource:
+    url: jdbc:mysql://production-server:3306/mydatabase
+    username: produser
+    password: prodpassword
+
+  logging:
+    level:
+      org.springframework.web: INFO
