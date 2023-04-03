@@ -1,3 +1,5 @@
+
+
 spring:
   application:
     name: spi-application-tishko
@@ -19,6 +21,7 @@ spring:
   config:
     activate:
       on-profile: development
+    additional-location: classpath:file:///d:/myPrj/spiEngine/src/main/resources/application_local.yaml
 
 ---
 
