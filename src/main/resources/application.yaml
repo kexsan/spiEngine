@@ -8,8 +8,6 @@ spring:
 ---
 
 spring:
-  profiles: development
-
   datasource:
     url: jdbc:mysql://localhost:3306/mydatabase
     username: root
@@ -18,12 +16,13 @@ spring:
   logging:
     level:
       org.springframework.web: DEBUG
+  config:
+    activate:
+      on-profile: development
 
 ---
 
 spring:
-  profiles: production
-
   datasource:
     url: jdbc:mysql://production-server:3306/mydatabase
     username: produser
@@ -32,3 +31,6 @@ spring:
   logging:
     level:
       org.springframework.web: INFO
+  config:
+    activate:
+      on-profile: production
