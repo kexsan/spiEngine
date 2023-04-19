@@ -38,6 +38,11 @@ dependencies {
    /* implementation 'junit:junit:4.13.2'
     testImplementation 'junit:junit:4.13.2'*/
 
+
+    // https://mvnrepository.com/artifact/org.apache.kafka/kafka-clients
+    implementation 'org.apache.kafka:kafka-clients:3.0.0'
+
+
     compileOnly 'org.projectlombok:lombok:1.18.26'
     annotationProcessor 'org.projectlombok:lombok:1.18.26'
 
