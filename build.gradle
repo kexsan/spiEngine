@@ -110,3 +110,23 @@ tasks.register('loadfile') {
 File[] fileList(String dir) {
     file(dir).listFiles({file -> file.isFile() } as FileFilter).sort()
 }
+
+defaultTasks 'clean1', 'run1', 'other1'
+
+tasks.register('clean1') {
+    doLast {
+        println 'Default Cleaning!'
+    }
+}
+
+tasks.register('run1') {
+    doLast {
+        println 'Default Running!'
+    }
+}
+
+tasks.register('other1') {
+    doLast {
+        println "I'm not a default task!"
+    }
+}
