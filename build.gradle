@@ -86,3 +86,17 @@ tasks.register('taskY') {
     }
 }
 tasks.named('task0') { dependsOn('task2', 'task3') }
+
+tasks.register('loadfile') {
+    def resourceDirectory = file('./antLoadfileResources')
+    doLast {
+        def files = resourceDirectory.listFiles().sort()
+        files.each { File file ->
+            if (file.isFile()) {
+                ant.loadfile(srcFile: file, property: file.name)
+                println " *** $file.name ***"
+                println "${ant.properties[file.name]}"
+            }
+        }
+    }
+}
