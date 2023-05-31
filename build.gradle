@@ -35,8 +35,8 @@ dependencies {
     implementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
 
-   /* implementation 'junit:junit:4.13.2'
-    testImplementation 'junit:junit:4.13.2'*/
+    /* implementation 'junit:junit:4.13.2'
+     testImplementation 'junit:junit:4.13.2'*/
 
 
     // https://mvnrepository.com/artifact/org.apache.kafka/kafka-clients
@@ -52,13 +52,37 @@ dependencies {
     // https://mvnrepository.com/artifact/commons-io/commons-io
     implementation group: 'commons-io', name: 'commons-io', version: '2.6'
 
-
+// https://mvnrepository.com/artifact/org.apache.kafka/kafka-clients
+    implementation 'org.apache.kafka:kafka-clients:3.0.0'
 }
 
 
-tasks.named('test') {
-    useJUnitPlatform()
+tasks.register('upper') {
+    doLast {
+        String someString = 'mY_nAmE'
+        println "Original: $someString"
+        println "Upper case: ${someString.toUpperCase()}"
+    }
+}
+tasks.register('taskX') {
+    dependsOn 'taskY'
+    doLast {
+        println 'taskX'
+    }
+}
+
+tasks.register('taskY') {
+    doLast {
+        println 'taskY'
+    }
 }
 
 
-
+4.times { counter ->
+    tasks.register("task$counter") {
+        doLast {
+            println "I'm task number $counter"
+        }
+    }
+}
+tasks.named('task0') { dependsOn('task2', 'task3') }
