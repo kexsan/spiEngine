@@ -15,7 +15,6 @@ repositories {
     mavenCentral()
 }
 
-apply from: './common.gradle'
 
 dependencies {
 
@@ -41,7 +40,7 @@ dependencies {
 
 
     // https://mvnrepository.com/artifact/org.apache.kafka/kafka-clients
-    implementation 'org.apache.kafka:kafka-clients:3.2.3'
+    implementation 'org.apache.kafka:kafka-clients:3.0.0'
 
 
     compileOnly 'org.projectlombok:lombok:1.18.26'
@@ -51,10 +50,11 @@ dependencies {
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.26'
 
     // https://mvnrepository.com/artifact/commons-io/commons-io
-    implementation group: 'commons-io', name: 'commons-io', version: '2.7'
+    implementation group: 'commons-io', name: 'commons-io', version: '2.6'
 
 // https://mvnrepository.com/artifact/org.apache.kafka/kafka-clients
-    implementation 'org.apache.kafka:kafka-clients:3.2.3'
+    implementation 'org.apache.kafka:kafka-clients:3.0.0'
 }
 
 
+apply from: './common.gradle'
