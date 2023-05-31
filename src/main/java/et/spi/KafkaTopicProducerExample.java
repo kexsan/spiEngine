@@ -14,8 +14,8 @@ import java.util.Properties;
 public class KafkaTopicProducerExample {
 
     public static void main(String[] args) throws Exception {
-       // produce();
-        consume();
+        produce();
+       // consume();
     }
 
     private static void consume() {
