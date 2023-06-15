@@ -15,7 +15,7 @@ public class KafkaTopicProducerExample {
 
     public static void main(String[] args) throws Exception {
         produce();
-       // consume();
+        consume();
     }
 
     private static void consume() {
