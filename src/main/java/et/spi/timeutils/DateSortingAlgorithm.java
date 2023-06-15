@@ -1,4 +1,4 @@
-package et.spi;
+package et.spi.timeutils;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

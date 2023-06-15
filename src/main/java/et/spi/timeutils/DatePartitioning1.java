@@ -1,8 +1,9 @@
-package et.spi;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+package et.spi.timeutils;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
-public class DatePartitioning {
+
+public class DatePartitioning1 {
     public static void main(String[] args) {
         String[] dates = {
                 "15.01.2023",
@@ -14,7 +15,9 @@ public class DatePartitioning {
                 "22.02.2023",
                 "10.02.2023"
         };
-        Collections.sort(Arrays.asList(dates),comparator);
+
+        Arrays.sort(dates, comparator);
+
         Map<String, List<String>> partitionedDates = partitionDatesByMonth(dates);
 
         // Вывод разбитых дат по месяцам
@@ -33,18 +36,19 @@ public class DatePartitioning {
     public static Map<String, List<String>> partitionDatesByMonth(String[] dates) {
         Map<String, List<String>> partitionedDates = new TreeMap<>();
 
+        DateTimeFormatter inputFormatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+        DateTimeFormatter outputFormatter = DateTimeFormatter.ofPattern("MM.yyyy");
+
         for (String date : dates) {
             try {
-                SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
-                Date parsedDate = dateFormat.parse(date);
+                LocalDate parsedDate = LocalDate.parse(date, inputFormatter);
 
-                SimpleDateFormat monthFormat = new SimpleDateFormat("MM.yyyy");
-                String month = monthFormat.format(parsedDate);
+                String month = parsedDate.format(outputFormatter);
 
                 List<String> monthDates = partitionedDates.getOrDefault(month, new ArrayList<>());
                 monthDates.add(date);
                 partitionedDates.put(month, monthDates);
-            } catch (ParseException e) {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }
@@ -52,21 +56,5 @@ public class DatePartitioning {
         return partitionedDates;
     }
 
-   static Comparator<String> comparator = new Comparator<String>() {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
-
-        @Override
-        public int compare(String date1, String date2) {
-            try {
-                Date parsedDate1 = dateFormat.parse(date1);
-                Date parsedDate2 = dateFormat.parse(date2);
-                return parsedDate1.compareTo(parsedDate2);
-            } catch (ParseException e) {
-                e.printStackTrace();
-            }
-            return 0;
-        }
-    };
-
-
+    static Comparator<String> comparator = Comparator.comparing((String date) -> LocalDate.parse(date, DateTimeFormatter.ofPattern("dd.MM.yyyy")));
 }
