@@ -56,6 +56,9 @@ public class KafkaTopicProducerExample {
 
         // Send a message to the "my-topic" Kafka topic
         String topic = "my-topic";
+        //
+        //
+        //
         String key = "my-key";
         String value = "Hello, Jack!";
         ProducerRecord<String, String> record = new ProducerRecord<>(topic, key, value);
