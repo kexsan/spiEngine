@@ -1,0 +1,40 @@
+{
+  "source_channel" : "SFA.CALL",
+  "source_message_id" : "SFACALL69306556957948294692704040618",
+  "timestamp_created" : "2023-04-06T10:39:38.766165",
+  "context" : {
+    "creation_datetime" : "2023-04-06T10:39:38.766165",
+    "cus" : "AAAAAA",
+    "event_id" : "SFA.CALL_1",
+    "metadata" : {
+      "event_parameters" : {
+        "channel_parameters" : {
+          "PUSH" : {
+            "phoneNumber" : "79183433561",
+            "text" : "Дмитрий Сергеевич, Ваша карта 5*9367 заблокирована в 10:39 06.04.2023. Если Вы не блокировали карту, обратитесь в банк по тел.: 84957888878 (Москва и Московская область) 88002000000 (Регионы)."
+          }
+        }
+      }
+    }
+  }
+}
+{
+  "source_channel" : "SFA.CALL",
+  "source_message_id" : "SFACALL39392431501494536455827857215",
+  "timestamp_created" : "2023-04-06T10:39:20.053591",
+  "context" : {
+    "creation_datetime" : "2023-04-06T10:39:20.053591",
+    "cus" : "AAAAAA",
+    "event_id" : "SFA.CALL_1",
+    "metadata" : {
+      "event_parameters" : {
+        "channel_parameters" : {
+          "PUSH" : {
+            "phoneNumber" : "79183433561",
+            "text" : "Дмитрий Сергеевич, Ваша карта 5*9367 активирована. Если Вы не активировали карту, обратитесь в банк по тел.: 84957888878 (Москва и Московская область) 88002000000 (Регионы)."
+          }
+        }
+      }
+    }
+  }
+}
