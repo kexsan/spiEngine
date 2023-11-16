@@ -1,4 +1,5 @@
-
+test:
+  value1: 19851985
 
 spring:
   application:
