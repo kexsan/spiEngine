@@ -1,10 +1,19 @@
 package et.spi.file;
 
-import java.nio.file.*;
+import org.springframework.boot.context.event.ApplicationReadyEvent;
+import org.springframework.context.event.EventListener;
+import org.springframework.scheduling.annotation.Async;
+import org.springframework.stereotype.Service;
 
+import java.nio.file.*;
+import java.util.List;
+@Service
 public class FileWatcher {
 
-    public static void main(String[] args) {
+
+    @EventListener(ApplicationReadyEvent.class)
+    @Async
+    public   void extracted() {
         try {
             WatchService watchService = FileSystems.getDefault().newWatchService();
 
@@ -15,8 +24,9 @@ public class FileWatcher {
 
             System.out.println("Watching for changes in: " + directory);
 
-            while (true) {
-                WatchKey key = watchService.take(); // Blocking call
+
+            WatchKey key;
+            while ((key = watchService.take()) != null) {
 
                 for (WatchEvent<?> event : key.pollEvents()) {
                     WatchEvent.Kind<?> kind = event.kind();
@@ -26,16 +36,20 @@ public class FileWatcher {
                         continue;
                     }
 
-                    Path changedPath = (Path) event.context();
-                    System.out.println("Event kind: " + kind + ", File affected: " + changedPath);
-                }
+                    System.out.println(event.context() + ", count: " +
+                            event.count() + ", event: " + event.kind());
 
+                    Path changedPath = (Path) event.context();
+                    System.out.println("Event kind: " + kind + ", File affected: " + changedPath+ " _ "+System.currentTimeMillis());
+
+                }
                 boolean reset = key.reset();
                 if (!reset) {
                     System.out.println("Watch key is no longer valid. Exiting watch loop.");
                     break;
                 }
             }
+
 
         } catch (Exception e) {
             e.printStackTrace();

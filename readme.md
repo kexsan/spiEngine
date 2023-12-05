@@ -6,3 +6,9 @@
 #
 # use --spring.config.additional-location=./src/main/resources/application_local.yaml
 
+
+
+
+# spring.config.name, spring.config.location, and spring.config.additional-location are used very early to 
+# determine which files have to be loaded. They must be defined as an environment property 
+# (typically an OS environment variable, a system property, or a command-line argument).
