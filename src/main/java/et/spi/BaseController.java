@@ -1,5 +1,6 @@
 package et.spi;
 
+import et.spi.file.FileWatcher;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cache.annotation.Cacheable;
@@ -20,7 +21,8 @@ public class BaseController {
 
     private final CacheService cacheService;
     private final EnvComponent envComponent;
-    private final  TestProps testProps;
+    private final TestProps testProps;
+
     public BaseController(CacheService cacheService, EnvComponent envComponent, TestProps testProps) {
         this.cacheService = cacheService;
         this.envComponent = envComponent;
@@ -56,7 +58,7 @@ public class BaseController {
     }
 
     @Cacheable("myCache")
-    public String baseTestCache(String s) {
+    public String baseTestCache(final String s) {
 
         return cacheService.getCachedData(s);
     }

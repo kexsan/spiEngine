@@ -20,18 +20,11 @@ dependencies {
     implementation 'junit:junit:4.13.2'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
-
-
-
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.projectlombok:lombok:1.18.22'
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
 
     implementation group: 'et.spi', name: 'eth-spi-app', version: '1.0-SNAPSHOT'
-
-
-
-
 
     compileOnly 'org.projectlombok:lombok:1.18.26'
     annotationProcessor 'org.projectlombok:lombok:1.18.26'

@@ -1,39 +1,26 @@
-
+test:
+  value1: 19851985
 
 spring:
   application:
     name: spi-application-tishko
 
-  profiles:
-    active: development
-
+# Configuration for the "development" profile
 ---
-
 spring:
-  datasource:
-    url: jdbc:mysql://localhost:3306/mydatabase
-    username: root
-    password: password123
-
-  logging:
-    level:
-      org.springframework.web: DEBUG
   config:
+    additional-location: ./src/main/resources/application_local_dev.yaml
     activate:
       on-profile: development
-    additional-location: classpath:file:///d:/myPrj/spiEngine/src/main/resources/application_local.yaml
 
+development-property: dev-value
+
+# Configuration for the "production" profile
 ---
-
 spring:
-  datasource:
-    url: jdbc:mysql://production-server:3306/mydatabase
-    username: produser
-    password: prodpassword
-
-  logging:
-    level:
-      org.springframework.web: INFO
   config:
+    additional-location: ./src/main/resources/application_local_prod.yaml
     activate:
       on-profile: production
+
+production-property: prod-value
