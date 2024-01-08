@@ -56,7 +56,6 @@ dependencies {
     implementation 'org.apache.kafka:kafka-clients:3.2.3'
 
 
-
 }
 
 
