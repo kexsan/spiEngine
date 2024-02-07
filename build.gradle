@@ -40,7 +40,7 @@ dependencies {
 
 
     // https://mvnrepository.com/artifact/org.apache.kafka/kafka-clients
-    implementation 'org.apache.kafka:kafka-clients:3.2.3'
+    implementation 'org.apache.kafka:kafka-clients:3.4.0'
 
 
     compileOnly 'org.projectlombok:lombok:1.18.26'
@@ -54,6 +54,9 @@ dependencies {
 
 // https://mvnrepository.com/artifact/org.apache.kafka/kafka-clients
     implementation 'org.apache.kafka:kafka-clients:3.2.3'
+
+// https://mvnrepository.com/artifact/org.hamcrest/hamcrest
+    testImplementation group: 'org.hamcrest', name: 'hamcrest', version: '2.1'
 
 
 }
