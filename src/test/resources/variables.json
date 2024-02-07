@@ -1,0 +1,8 @@
+{
+  "res": "1",
+  "id": "unique_id_123",
+  "exc": {
+    "errorCode": "GSOE0004",
+    "errorString": "Не заполнено обязательное поле: variants[0]CHANNEL\nvariants[0]PRIORITY\nvariants[0]STATUS\nvariants[0]LOCATION\nvariants[0]BANNER_TEMPLATE_ID\nvariants[1]CHANNEL\nvariants[1]PRIORITY\nvariants[1]STATUS\nvariants[1]LOCATION\nvariants[1]BANNER_TEMPLATE_ID\n"
+  }
+}
