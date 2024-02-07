@@ -11,7 +11,7 @@ import org.springframework.core.env.ConfigurableEnvironment;
 
 import static org.mockito.Mockito.when;
 @Log
-public class MyTest {
+public class TestConfigurableEnvironmentMock {
 
     @Mock
     private ConfigurableEnvironment env;
