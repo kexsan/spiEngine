@@ -17,13 +17,7 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-/**
- * Created by IntelliJ IDEA.
- * User: tishko
- * Date: 28/05/2021
- * Time: 11:41 AM
- * To change this template use File | Settings | File and Code Templates.
- */
+
 public class HttpTest
 {
     private List<HttpTestTask> tasks = new ArrayList<HttpTestTask>();
